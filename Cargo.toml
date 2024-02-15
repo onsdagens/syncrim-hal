@@ -7,4 +7,5 @@ edition = "2021"
 
 [dependencies]
 embedded-hal = "1.0.0"
+#syncrim-pac = {path = "../syncrim-pac/"}
 syncrim-pac = {git="https://github.com/onsdagens/syncrim-pac", branch = "gen"}
