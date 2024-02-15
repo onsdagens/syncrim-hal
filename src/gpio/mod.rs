@@ -52,8 +52,8 @@ impl<T> Pin<T> {
         let e = g.enable().read().bits();
         let c = g.config().read().bits();
         unsafe {
-            g.enable().write(|w| w.bits(e | 1 << self.number));
-            g.config().write(|w| w.bits(c ^ 1 << self.number));
+            g.enable().write(|w| w.bits(e | (1 << self.number)));
+            g.config().write(|w| w.bits(c & !(1 << self.number)));
         }
         Pin {
             number: self.number,
