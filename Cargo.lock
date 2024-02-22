@@ -11,7 +11,7 @@ checksum = "dc827186963e592360843fb5ba4b973e145841266c1357f7180c43526f2e5b61"
 [[package]]
 name = "clic"
 version = "0.1.0"
-source = "git+https://github.com/onsdagens/clic?branch=csr_pend#2fdf38b8e655346d1a0ffbb777ca00737ad663fa"
+source = "git+https://github.com/onsdagens/clic?branch=mtime#b65fd8537bccd4ba34de92dfdc6f342cc0d51ad9"
 dependencies = [
  "critical-section",
  "riscv 0.10.1",
@@ -137,6 +137,7 @@ dependencies = [
 [[package]]
 name = "syncrim-pac"
 version = "0.1.0"
+source = "git+https://github.com/onsdagens/syncrim-pac?branch=mtime#66cb4223db736162664c02e75d6f5d03364c186b"
 dependencies = [
  "clic",
  "riscv 0.11.0",

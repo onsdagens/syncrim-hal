@@ -1,5 +1,5 @@
 use core::marker::PhantomData;
-
+use syncrim_pac::GPIO;
 pub use embedded_hal::digital::{self, *};
 pub type Error = core::convert::Infallible;
 
@@ -100,8 +100,7 @@ impl digital::StatefulOutputPin for Pin<Output> {
     #[inline(always)]
     fn toggle(&mut self) -> Result<(), Self::Error> {
         unsafe {
-            crate::pac::Peripherals::steal()
-                .GPIO
+                (&*GPIO::PTR)
                 .toggle()
                 .write(|w| w.bits(1 << self.number))
         }
